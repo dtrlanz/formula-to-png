@@ -14,15 +14,17 @@ def generate_all_formula_pngs():
         os.makedirs(output_dir)
         print(f"Created directory: {output_dir}")
 
+    color = "black"  # Default color for the formulas
+
     print("\n--- Generating Math Formulas ---")
     for name, latex_formula in math_formulas.items():
         filename = os.path.join(output_dir, f"{name}.png")
-        formula_to_png(latex_formula, filename, font_family="Latin Modern", fontsize=20)
+        formula_to_png(latex_formula, filename, font_family="Latin Modern", fontsize=20, color=color)
 
     print("\n--- Generating Biology Formulas ---")
     for name, latex_formula in biology_formulas.items():
         filename = os.path.join(output_dir, f"{name}.png")
-        formula_to_png(latex_formula, filename, font_family="Latin Modern", fontsize=18)
+        formula_to_png(latex_formula, filename, font_family="Latin Modern", fontsize=18, color=color)
 
     print("\nAll formula PNGs generated successfully!")
 

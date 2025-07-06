@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import os
 
 
-def formula_to_png(formula_latex: str, filename: str, font_family: str = "Computer Modern", fontsize: int = 24):
+def formula_to_png(formula_latex: str, filename: str, font_family: str = "Computer Modern", fontsize: int = 24, color: str = "black"):
     """
     Converts a LaTeX mathematical formula into a PNG image with a transparent background.
 
@@ -47,8 +47,8 @@ def formula_to_png(formula_latex: str, filename: str, font_family: str = "Comput
         # Hide the axes (we only want the formula, not a plot)
         ax.axis('off')
 
-        # Add the LaTeX formula as text
-        ax.text(0.5, 0.5, formula_latex, fontsize=fontsize, ha='center', va='center', usetex=True, color='black')
+        # Add the LaTeX formula as text with the specified color
+        ax.text(0.5, 0.5, formula_latex, fontsize=fontsize, ha='center', va='center', usetex=True, color=color)
 
         # Save the figure with a transparent background
         plt.savefig(filename, bbox_inches='tight', transparent=True, dpi=300)
